@@ -10,7 +10,7 @@ const adminRoutes = require('./routes/admin')
 
 const app = express();
 app.use(cors({
-    origin: "https://idotdevelop.github.io",
+    origin: "*",
 }));
 // app.use((req, res, next) => {
 //     res.header("Access-Control-Allow-Headers", "*")
