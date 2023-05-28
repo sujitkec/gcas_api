@@ -10,18 +10,18 @@ const adminRoutes = require('./routes/admin')
 
 const app = express();
 app.use(cors({
-    origin: "https://idotdevelop.github.io/",
+    origin: "https://idotdevelop.github.io",
 }));
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Headers", "*")
-    res.header(
-        "Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE"
-    )
-    res.header(
-        "Access-Control-Allow-Headers", "Content-Type, x-requested-with"
-    )
-    next();
-})
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Headers", "*")
+//     res.header(
+//         "Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE"
+//     )
+//     res.header(
+//         "Access-Control-Allow-Headers", "Content-Type, x-requested-with"
+//     )
+//     next();
+// })
 app.use(express.json());
 app.use(bodyparser.urlencoded({extended: false}));
 
