@@ -24,7 +24,8 @@ const blogSchema = new mongoose.Schema({
             },
             content: {
                 type: String,
-            }
+            },
+            list_items: [{ type: String }],
         }
     ],
     created_at: {
