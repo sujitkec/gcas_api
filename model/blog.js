@@ -19,6 +19,9 @@ const blogSchema = new mongoose.Schema({
     },
     sub_content: [
         {
+            content_img: {
+                type: String,
+            },
             title: {
                 type: String,
             },
