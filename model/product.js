@@ -32,7 +32,13 @@ const productSchema = new mongoose.Schema({
     updated_at: {
         type: Date,
         default: Date.now,
-    }
+    },
+    spec_table: [
+        {
+            name: String,
+            content: String
+        }
+    ]
 });
 
 module.exports = mongoose.model("Product", productSchema);

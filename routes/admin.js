@@ -9,7 +9,8 @@ const {
 const {
     addproduct,
     updateproduct,
-    deleteproduct
+    deleteproduct,
+    addAndUpdateTable
 } = require('../controller/product')
 
 //blogs
@@ -23,5 +24,6 @@ router
     .post('/product', addproduct)
     .patch('/product', updateproduct)
     .delete('/product/:id', deleteproduct)
+    .patch('/producttable/:id', addAndUpdateTable)
 
 module.exports = router;

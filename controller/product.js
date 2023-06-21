@@ -57,3 +57,17 @@ module.exports.deleteproduct = async (req, res) => {
         res.status(500).json(error.message);
     }
 }
+
+module.exports.addAndUpdateTable = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const existingproduct = await Products.findById(id);
+        if (existingproduct) {
+            const product = new Products({ ...existingproduct, ...req.body });
+            await product.save();
+            res.status(200).json(product);
+        }
+    } catch (error) {
+        res.status(500).json(error.message);
+    }
+}
