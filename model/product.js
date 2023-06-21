@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema({
     },
     spec_table: [
         {
-            name: String,
+            title: String,
             content: String
         }
     ]

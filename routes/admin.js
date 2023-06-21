@@ -24,6 +24,7 @@ router
     .post('/product', addproduct)
     .patch('/product', updateproduct)
     .delete('/product/:id', deleteproduct)
-    .patch('/producttable/:id', addAndUpdateTable)
+
+router.patch('/prodtable/:id', addAndUpdateTable)
 
 module.exports = router;

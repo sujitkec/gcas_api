@@ -61,11 +61,13 @@ module.exports.deleteproduct = async (req, res) => {
 module.exports.addAndUpdateTable = async (req, res) => {
     try {
         const { id } = req.params;
+        console.log(req.body)
         const existingproduct = await Products.findById(id);
         if (existingproduct) {
-            const product = new Products({ ...existingproduct, ...req.body });
-            await product.save();
-            res.status(200).json(product);
+            await Products.findOneAndUpdate({ _id: id }, {
+                spec_table: req.body
+            });
+            res.status(200).json("Updated Edited");
         }
     } catch (error) {
         res.status(500).json(error.message);
