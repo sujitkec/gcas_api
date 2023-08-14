@@ -16,7 +16,7 @@ const {
 //blogs
 router
     .post('/blog', addblog)
-    .patch('/blog', updateblog)
+    .patch('/blog/:id', updateblog)
     .delete('/blog/:id', deleteblog)
 
 //products

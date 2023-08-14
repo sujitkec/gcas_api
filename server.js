@@ -24,10 +24,6 @@ app.use(cors({
 // })
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: false }));
-app.use((req, res, next) => {
-    console.log(req.body);
-    next();
-})
 
 mongoose.connect(process.env.DB).then(() => {
     console.log('Db connection open')
